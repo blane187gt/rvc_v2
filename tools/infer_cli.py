@@ -6,6 +6,7 @@ now_dir = os.getcwd()
 sys.path.append(now_dir)
 from dotenv import load_dotenv
 from scipy.io import wavfile
+from pydub import AudioSegment
 
 from configs.config import Config
 from infer.modules.vc.modules import VC
@@ -65,3 +66,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+print(f"Showing {wav_opt}.")
+AudioSegment.from_file(wav_opt)
