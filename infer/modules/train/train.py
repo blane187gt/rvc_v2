@@ -335,7 +335,9 @@ def train_and_evaluate(
 
         # Logging
         if rank == 0:
-            logger.info(f"Epoch: {epoch}, Batch {i}: Discriminator loss: {loss_d.item()}, Generator loss: {loss_g.item()}")
+            logger.info(
+                f"Epoch: {epoch}, Batch {i}: Discriminator loss: {loss_d.item()}, Generator loss: {loss_g.item()}"
+            )
 
     if rank == 0:
         writer.add_scalar("Discriminator Loss", loss_d.item(), epoch)
